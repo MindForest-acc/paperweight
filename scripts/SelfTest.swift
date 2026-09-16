@@ -9,7 +9,7 @@ func check(_ label: String, _ ok: Bool, _ detail: String = "") {
 
 // 1. 语料完整性
 let books = Set(corpus.quotes.map(\.book))
-check("书目齐全", books == ["yi", "sunzi", "zhuangzi", "mozi", "yangming", "zeng", "maoxuan"], "\(books.sorted())")
+check("书目齐全", books == ["yi", "laozi", "sunzi", "mozi", "zhuangzi", "yangming", "zeng", "maoxuan"], "\(books.sorted())")
 check("无重复原文", Set(corpus.quotes.map(\.text)).count == corpus.quotes.count)
 check("每条都有出处与释义",
       corpus.quotes.allSatisfy { !$0.source.isEmpty && !($0.note ?? "").isEmpty })
