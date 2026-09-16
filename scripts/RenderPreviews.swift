@@ -37,7 +37,7 @@ func save(_ img: NSImage, _ name: String) {
 }
 
 /// 每本书各取一条短句与一条长句，全部横排（产品默认）
-let picks = ["yi", "laozi", "sunzi", "mozi", "zhuangzi", "yangming", "zeng", "maoxuan"]
+let picks = ["yi", "laozi", "sunzi", "mozi", "shang", "zhuangzi", "yangming", "zeng", "maoxuan"]
 for book in picks {
     for (tag, range) in [("短", 0 ... 12), ("长", 30 ... 200)] {
         let pool = corpus.quotes.filter { $0.book == book && range.contains($0.text.count) }
